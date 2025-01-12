@@ -33,6 +33,16 @@ body {
 }
 
 /* Hero content */
+#home .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 3; /* Ensure the text stays above the background */
+}
+
+/* Hero heading */
 #home h1 {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -55,10 +65,9 @@ body {
 }
 
 #home .highlight::after {
-    content: " 🌶️"; /* Red chili emoji */
+    /* Red chili emoji */
     font-size: 4.5rem; /* Match the font size */
 }
-
 
 /* CTA Button */
 .cta-btn {
@@ -74,6 +83,46 @@ body {
 .cta-btn:hover {
     background-color: #C0392B; /* Darker red */
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    #home {
+        height: 100vh; /* Ensure full screen height on mobile */
+        padding: 0 20px; /* Padding for smaller screens */
+        text-align: center; /* Ensure text stays centered */
+    }
+
+    #home .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Make sure the content is vertically centered */
+        margin-top: 50px; /* Push content slightly below the navbar */
+        z-index: 3; /* Ensure the text stays above the background */
+    }
+
+    /* Fine Dining heading */
+    #home h1 {
+        font-size: 2.5rem; /* Adjust font size */
+        margin-bottom: 15px; /* Reduce margin */
+    }
+
+    #home .highlight {
+        font-size: 3rem; /* Adjust font size for "Fine Dining" */
+    }
+
+    #home p {
+        font-size: 1.2rem; /* Adjust font size */
+        margin-bottom: 20px; /* Reduce margin */
+    }
+
+    .cta-btn {
+        padding: 12px 25px; /* Adjust button size */
+        font-size: 1rem; /* Adjust button font size */
+    }
+}
+
 
 /* Navigation */
 header {
