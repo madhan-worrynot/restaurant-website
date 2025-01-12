@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="images/logo.png" alt="Restaurant Logo"> <!-- Logo Image -->
+                <span>FINE DINING</span> <!-- Logo Text -->
+            </div>
+            <ul id="nav-links" class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservation">Reserve</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+    
+    
+    
+
+    <section id="home">
+        <div class="hero-content">
+            <h1>
+                Welcome to <span class="highlight">Fine Dining 🌶️</span>
+            </h1>
+            <p>Your perfect dining experience awaits!</p>
+            <a href="#reservation" class="cta-btn">Book a Table</a>
+        </div>
+    </section>
+    
+    
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="images/Grilled Chicken.jpg" alt="Dish 1" class="menu-image">
+                <h3>Grilled Chicken</h3>
+                <p>Delicious grilled chicken served with a side of fresh vegetables.</p>
+                <div class="menu-footer">
+                    <span class="price">$12.99</span>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Pasta Alfredo.jpg" alt="Dish 2" class="menu-image">
+                <h3>Pasta Alfredo</h3>
+                <p>Creamy Alfredo pasta topped with parmesan cheese.</p>
+                <div class="menu-footer">
+                    <span class="price">$10.99</span>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Cheeseburger.jpg" alt="Dish 3" class="menu-image">
+                <h3>Cheeseburger</h3>
+                <p>Juicy cheeseburger with lettuce, tomato, and a toasted bun.</p>
+                <div class="menu-footer">
+                    <span class="price">$8.99</span>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="images/Margherita Pizza.jpg" alt="Dish 4" class="menu-image">
+                <h3>Margherita Pizza</h3>
+                <p>Classic Margherita pizza with fresh basil and mozzarella.</p>
+                <div class="menu-footer">
+                    <span class="price">$11.99</span>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+            <!-- Additional Dishes -->
+<div class="menu-item">
+    <img src="images/Lobster Tail.jpg" alt="Dish 5" class="menu-image">
+    <h3>Lobster Tail</h3>
+    <p>Grilled lobster tail with garlic butter sauce and lemon wedges.</p>
+    <div class="menu-footer">
+        <span class="price">$19.99</span>
+        <button class="order-now">Order Now</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="images/Paneer Tikka.jpg" alt="Dish 6" class="menu-image">
+    <h3>Paneer Tikka</h3>
+    <p>Marinated cottage cheese cubes grilled to perfection.</p>
+    <div class="menu-footer">
+        <span class="price">$9.99</span>
+        <button class="order-now">Order Now</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="images/Pad Thai Noodles.jpg" alt="Dish 7" class="menu-image">
+    <h3>Pad Thai Noodles</h3>
+    <p>Stir-fried rice noodles with tofu, peanuts, and tamarind sauce.</p>
+    <div class="menu-footer">
+        <span class="price">$13.99</span>
+        <button class="order-now">Order Now</button>
+    </div>
+</div>
+<div class="menu-item">
+    <img src="images/BBQ Ribs.jpg" alt="Dish 8" class="menu-image">
+    <h3>BBQ Ribs</h3>
+    <p>Slow-cooked BBQ ribs glazed with tangy barbecue sauce.</p>
+    <div class="menu-footer">
+        <span class="price">$17.99</span>
+        <button class="order-now">Order Now</button>
+    </div>
+</div>
+            
+        </div>
+    </section>
+    
+    
+
+    <section id="reservation">
+        <h2>Reserve a Table</h2>
+        <div class="reservation-form">
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Reservation Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Reservation Time</label>
+                    <input type="time" id="time" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <input type="number" id="guests" placeholder="Number of Guests" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Your Contact Number</label>
+                    <input type="tel" id="contact" placeholder="Your Contact Number" required>
+                </div>
+                <button type="submit" class="btn">Reserve Now</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Visit Us</h3>
+                <p>123 Fine Dining Street, City, Country</p>
+            </div>
+            <div class="contact-item">
+                <h3>Call Us</h3>
+                <p>(123) 456-7890</p>
+            </div>
+            <div class="contact-item">
+                <h3>Email Us</h3>
+                <p>contact@finedining.com</p>
+            </div>
+        </div>
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Restaurant Name. All Rights Reserved.</p>
+            <p>Follow us on:</p>
+            <div class="social-icons">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

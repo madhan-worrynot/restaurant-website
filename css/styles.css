@@ -1,0 +1,559 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1616; /* Black background */
+    color: #ecf0f1; /* Light gray for text */
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Fullscreen Background Section */
+#home {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh; /* Full height of viewport */
+    background-attachment: fixed; /* Keeps background fixed while scrolling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    padding: 0 20px; /* Ensure padding for smaller screens */
+    z-index: 2; /* Keeps the home section above other sections */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially translated down */
+    animation: fadeInUp 1s forwards 0.5s; /* Add smooth fade-in and slide-up effect */
+}
+
+/* Hero content */
+#home h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* Highlight styling for "Fine Dining" */
+#home .highlight {
+    color: #E74C3C; /* Red color */
+    font-size: 4.5rem; /* Slightly larger for emphasis */
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between text and emoji */
+}
+
+#home .highlight::after {
+    content: " 🌶️"; /* Red chili emoji */
+    font-size: 4.5rem; /* Match the font size */
+}
+
+
+/* CTA Button */
+.cta-btn {
+    padding: 15px 30px;
+    background-color: #E74C3C; /* Red color */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #C0392B; /* Darker red */
+}
+
+/* Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #bc0429; /* Dark red */
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Added padding for smaller screens */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #E74C3C; /* Red hover effect */
+}
+
+/* Mobile Hamburger Menu (Hidden by default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* Responsive Design for Mobile (Below 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        list-style-type: none;
+        display: none; /* Initially hide menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #bc0429;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 500;
+    }
+
+    nav ul.active {
+        display: block; /* Display menu when active */
+    }
+
+    nav a {
+        display: block; /* Stack the links vertically */
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* For Larger Screens (Laptop, Desktop) */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide hamburger on large screens */
+    }
+
+    nav ul {
+        display: flex; /* Menu is shown by default */
+    }
+}
+
+/* Section Styles */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1a1616; /* Dark gray */
+    z-index: 2;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially translated down */
+    animation: fadeInUp 1s forwards; /* Smooth fade-in and slide-up effect */
+}
+
+/* Fade-in and slide-up animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Balance Section */
+#balance {
+    background-color: #34495E; /* Darker gray */
+    padding: 50px 20px;
+    text-align: center;
+    z-index: 2; /* Keeps balance section above background */
+    opacity: 0;
+    transform: translateY(50px); /* Initially translated down */
+    animation: fadeInUp 1s forwards 0.5s; /* Add smooth fade-in and slide-up effect */
+}
+
+#balance h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#balance p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.balance-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #E74C3C; /* Red color for emphasis */
+}
+
+/* Menu Section */
+#menu {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f8f8f8; /* Light background */
+    color: #333;
+}
+
+#menu h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: #E74C3C; /* Accent color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Larger menu items */
+    gap: 40px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.menu-item {
+    background-color: #ffffff; /* Bright background for menu items */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Stronger shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure hover effects stay contained */
+}
+
+.menu-item:hover {
+    transform: scale(1.08); /* More noticeable zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow for hover */
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, filter 0.4s ease; /* Smooth hover effect on image */
+}
+
+.menu-item:hover img {
+    transform: scale(1.1); /* Zoom effect on hover */
+    filter: brightness(0.9); /* Slight darkening for focus */
+}
+
+.menu-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #E74C3C; /* Red accent for titles */
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.menu-item p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.menu-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.menu-footer .price {
+    font-size: 1.6rem;
+    color: #F39C12; /* Gold for prices */
+    font-weight: bold;
+}
+
+.menu-footer .order-now {
+    background-color: #E74C3C;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.menu-footer .order-now:hover {
+    background-color: #C0392B;
+    transform: scale(1.05); /* Slight scaling effect */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Smaller columns for tablets */
+        gap: 30px;
+    }
+
+    .menu-item {
+        padding: 20px;
+    }
+
+    .menu-item img {
+        height: 180px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.6rem;
+    }
+
+    .menu-item p {
+        font-size: 1.1rem;
+    }
+
+    .menu-footer .price {
+        font-size: 1.4rem;
+    }
+
+    .menu-footer .order-now {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu h2 {
+        font-size: 2.5rem;
+    }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller items for mobile */
+        gap: 20px;
+    }
+
+    .menu-item {
+        padding: 15px;
+    }
+
+    .menu-item img {
+        height: 160px;
+    }
+
+    .menu-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .menu-item p {
+        font-size: 1rem;
+    }
+
+    .menu-footer .price {
+        font-size: 1.2rem;
+    }
+
+    .menu-footer .order-now {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Reservation Form Styles */
+.reservation-form {
+    background-color: #1a1616; /* Darker gray */
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%; /* Default width for larger screens */
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+    max-width: 600px; /* Max width for larger screens */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+form input,
+form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%; /* Make inputs and button fill the container */
+    transition: all 0.3s ease;
+}
+
+/* Focus effects */
+form input:focus {
+    border-color: #E74C3C; /* Red focus color */
+}
+
+form button {
+    background-color: #E74C3C; /* Red color */
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #C0392B; /* Darker red */
+}
+
+/* Mobile (Below 768px) */
+@media (max-width: 768px) {
+    .reservation-form {
+        width: 80%; /* Increase width on mobile for better visibility */
+        padding: 15px; /* Adjust padding */
+    }
+
+    form input,
+    form button {
+        font-size: 1rem; /* Slightly smaller font size for mobile */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .form-group label {
+        font-size: 1rem; /* Adjust label font size */
+    }
+}
+
+
+
+/* Contact Section */
+#contacts {
+    padding: 50px 20px;
+    background-color: white; /* Darker gray for contrast */
+    text-align: center;
+    color: #C0392B;
+    margin-top: 60px; /* Space from navbar */
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background-color: #1a1616; /* Darker gray */
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px; /* Set max width to control form size */
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #C0392B;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #E74C3C; /* Red focus color */
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #E74C3C; /* Red color */
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #C0392B; /* Darker red */
+}
+
+/* Footer */
+footer {
+    background-color: #1a1616; /* Dark gray */
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1.2rem;
+}
+
+footer a {
+    color: #E74C3C; /* Red link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #C0392B; /* Darker red */
+}
